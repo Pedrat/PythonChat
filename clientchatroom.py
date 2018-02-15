@@ -8,12 +8,18 @@ host= sys.argv[1]
 clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 clientsocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 clientsocket.connect((sys.argv[1], headerchatroom.PORT))
+<<<<<<< HEAD
 CURSOR_UP_ONE = '\x1b[1A'
 ERASE_LINE = '\x1b[2K'
 
 def prompt(): #Input do User
     print('>>', end=' ', flush = True) # FLush é boa pratica
     #print('\r',flush= True)
+=======
+
+def prompt(): #Input do User
+    print('>>', end=' ', flush = True) # FLush é boa pratica
+>>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
 
 print("Conectado\nBem Vindo!")
 msg_prefix = '' #Para o sv nao confundir com o prompt inicial de nome
@@ -42,5 +48,8 @@ while True:
                     prompt()
         else:
             msg = msg_prefix + sys.stdin.readline()
+<<<<<<< HEAD
             print(CURSOR_UP_ONE + ERASE_LINE)
+=======
+>>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
             clientsocket.sendall(msg.encode())

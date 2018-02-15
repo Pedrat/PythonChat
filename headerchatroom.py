@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import socket, datetime, os,sys
+=======
+import socket, datetime, os
+>>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
 
 PORT = 4040 #Porta que ira ser usada sempre
 messages=[] #Usado para logs de system
 Mayday="/exit"
+<<<<<<< HEAD
 listaasneira=[]
 listaasneiraaux=[]
 svmsg=""
@@ -10,6 +15,8 @@ svmsg=""
 for x in open("listaAsneira.txt",'r'):
     listaasneira.append(x)
 
+=======
+>>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
 
 def criasocket(address): #Função para criar a socket de sv
     sv = socket.socket(socket.AF_INET,socket.SOCK_STREAM) #Cria a socket em IPv4 e TCP/IP
@@ -25,18 +32,27 @@ class SALAS: #Class para todas as salas.
         self.user=[] #Uma Lista com todos os users la dentro
         self.name = name #Nomes de salas
     def ENTRADA(self, utilizador): #Função para mandar uma msg de Saudações
+<<<<<<< HEAD
         msg = b"Bem vindo,"+utilizador.name.encode()+b"  a sala:\n"+self.name.encode() #Saudações da room
+=======
+        msg = b"Bem vindo,  a sala:\n" #Saudações da room
+>>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
         self.BROADCAST(utilizador,msg)
     def remove_user(self,utilizador): #Função para um utilizador sair da salas
         self.user.remove(utilizador) #Remove o user da sala
         msg = utilizador.name.encode() + b' saiu da sala\n'
         self.BROADCAST(utilizador,msg)
     def BROADCAST(self,utilizador,msg): #Função para broadcast de tudo
+<<<<<<< HEAD
         for x in (msg.decode()).split():
             for y in listaasneira:
                 if x in y:
                     msg=msg.replace(x.encode(),(b"*"*len(x)))
         msg = ((("[{} ".format(datetime.datetime.now().strftime("%H:%M:%S")).encode()))+utilizador.name.encode() + b']: ' + msg) #Formato standard de msg
+=======
+        msg = ((("[{} ".format(datetime.datetime.now().strftime("%H:%M:%S")).encode()))+utilizador.name.encode() + b']: ' + msg)
+        #Formato standard de msg
+>>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
         messages.append(msg.decode()) #Faz append para system logs
         for users in self.user: #Faz o broadcast em si.
             users.socket.sendall(msg)
@@ -68,6 +84,7 @@ class LOBBY: #Class para o lobby
 
                 msg+= sala + ": "+str(len(self.room[sala].user))+ " Online\n"
             user.socket.sendall(msg.encode())
+<<<<<<< HEAD
     def swearupdate(self):
         file=open("listaAsneira.txt",'a')
         while 1:
@@ -82,6 +99,8 @@ class LOBBY: #Class para o lobby
                 file.write(aux+'\n')
                 listaasneira.append(aux)
 
+=======
+>>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
     def save_log(self):
         valida=0
         date = datetime.datetime.now().strftime("%d-%m-%Y")
@@ -104,6 +123,7 @@ class LOBBY: #Class para o lobby
             file.close()
             del messages[:]
 
+<<<<<<< HEAD
     def svinput(self,svmsg):
         #self.msghandler("SERVER",svmsg)
         if "/save" in svmsg:
@@ -112,6 +132,8 @@ class LOBBY: #Class para o lobby
             self.swearupdate()
 
 
+=======
+>>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
     def msghandler(self,user,msg):
         print(("[{} ".format(datetime.datetime.now().strftime("%H:%M:%S")))+user.name + "] says: " + msg) #O que o user diz no sv
         comandos=b'Comandos:\n/list Para listar as salas disponiveis\n/join room_name para criar,juntar-se, ou mudar de sala\n/help Para mostrar comandos\n/exit Para desconectar-se\n/save Para salvar os logs\n'
@@ -142,20 +164,32 @@ class LOBBY: #Class para o lobby
                     self.pessoasemsala[user.name] = room_name #User esta nessa room
             else:
                 user.socket.sendall(comandos)
+<<<<<<< HEAD
         elif "/list" in msg or "/list" in svmsg:
             self.listasalas(user)
 
         elif "/help" in msg or "/help" in svmsg  :
+=======
+        elif "/list" in msg:
+            self.listasalas(user)
+
+        elif "/help" in msg:
+>>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
             user.socket.sendall(comandos)
         elif "/exit" in msg:
             user.socket.sendall(b'/exit')
             self.remove_user(user)
 
+<<<<<<< HEAD
         elif "/save" in msg or "/save" in svmsg:
             self.save_log()
         elif "/update" in msg or "/update" in svmsg:
             self.swearupdate()
 
+=======
+        elif "/save" in msg:
+            self.save_log()
+>>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
         else:
             # Faz check se o user esta em uma sala
             if user.name in self.pessoasemsala:
