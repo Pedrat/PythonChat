@@ -6,7 +6,7 @@ Mayday="/exit"
 listaasneira=[]
 listaasneiraaux=[]
 svmsg=""
-
+listanomes=[]
 for x in open("listaAsneira.txt",'r'):
     listaasneira.append(x)
 
@@ -25,7 +25,7 @@ class SALAS: #Class para todas as salas.
         self.user=[] #Uma Lista com todos os users la dentro
         self.name = name #Nomes de salas
     def ENTRADA(self, utilizador): #Função para mandar uma msg de Saudações
-        msg = b"Bem vindo,"+utilizador.name.encode()+b"  a sala:\n"+self.name.encode() #Saudações da room
+        msg = b"Bem vindo,"+utilizador.name.encode()+b"  a sala:"+self.name.encode()+b'\n' #Saudações da room
         self.BROADCAST(utilizador,msg)
     def remove_user(self,utilizador): #Função para um utilizador sair da salas
         self.user.remove(utilizador) #Remove o user da sala
@@ -34,7 +34,7 @@ class SALAS: #Class para todas as salas.
     def BROADCAST(self,utilizador,msg): #Função para broadcast de tudo
         for x in (msg.decode()).split():
             for y in listaasneira:
-                if x in y:
+                if x == y:
                     msg=msg.replace(x.encode(),(b"*"*len(x)))
         msg = ((("[{} ".format(datetime.datetime.now().strftime("%H:%M:%S")).encode()))+utilizador.name.encode() + b']: ' + msg) #Formato standard de msg
         messages.append(msg.decode()) #Faz append para system logs
@@ -65,7 +65,6 @@ class LOBBY: #Class para o lobby
         else:
             msg = "Salas:\n"
             for sala in self.room:
-
                 msg+= sala + ": "+str(len(self.room[sala].user))+ " Online\n"
             user.socket.sendall(msg.encode())
     def swearupdate(self):
@@ -104,12 +103,25 @@ class LOBBY: #Class para o lobby
             file.close()
             del messages[:]
 
-    def svinput(self,svmsg):
-        #self.msghandler("SERVER",svmsg)
+    def kick(self,kick):
+        #print(user)
+        for x in listanomes:
+            if x == kick:
+                print("herro")
+                self.room[self.pessoasemsala[kick]].remove_user(kick)
+                del self.pessoasemsala[kick]
+
+
+    def svinput(self,svmsg,online):
         if "/save" in svmsg:
             self.save_log()
         elif "/update" in svmsg:
             self.swearupdate()
+        elif "/online" in svmsg:
+            for x in online:
+                print(x)
+        elif "/kick" in svmsg:
+            self.kick(svmsg[6:])
 
 
     def msghandler(self,user,msg):
@@ -117,6 +129,7 @@ class LOBBY: #Class para o lobby
         comandos=b'Comandos:\n/list Para listar as salas disponiveis\n/join room_name para criar,juntar-se, ou mudar de sala\n/help Para mostrar comandos\n/exit Para desconectar-se\n/save Para salvar os logs\n'
         if "name: " in msg: #Faz check se o user é novo ou não, se for, guarda o nome
             name = msg.split()[1]
+            listanomes.append(name)
             user.name = name
             auxmsg = ("[{}]Nova conexão de: {}".format(datetime.datetime.now().strftime("%H:%M:%S"),user.name))+'\n'
             messages.append(auxmsg)
@@ -142,19 +155,24 @@ class LOBBY: #Class para o lobby
                     self.pessoasemsala[user.name] = room_name #User esta nessa room
             else:
                 user.socket.sendall(comandos)
-        elif "/list" in msg or "/list" in svmsg:
+        elif "/list" in msg:
             self.listasalas(user)
 
-        elif "/help" in msg or "/help" in svmsg  :
+        elif "/help" in msg:
             user.socket.sendall(comandos)
         elif "/exit" in msg:
             user.socket.sendall(b'/exit')
             self.remove_user(user)
 
-        elif "/save" in msg or "/save" in svmsg:
+        elif "/save" in msg:
             self.save_log()
-        elif "/update" in msg or "/update" in svmsg:
+        elif "/update" in msg:
             self.swearupdate()
+        elif "/online" in msg:
+            for x in listanomes:
+                #socket.sendall(x)
+                user.socket.sendall((x+'\n').encode())
+
 
         else:
             # Faz check se o user esta em uma sala

@@ -1,4 +1,4 @@
-import select,socket,sys, threading,time
+import select,socket,sys, threading,time,os
 from headerchatroom import LOBBY, SALAS, USER
 import headerchatroom
 
@@ -11,12 +11,11 @@ online=[]
 online.append(listen_sock)  #Quem esta conectado
 
 def server():
-    while 1:
-        #USER.fileno()
+    while True:
+        #print(threading.active_count())
         read_users, write_users,error_sockets = select.select(online, [], [])
         #Organiza tudo em listas(User,Mensagens,Erros)
         for user in read_users:
-            #svmsg = sys.stdin.readline()
 
             if user is listen_sock: #Nova conexão, user é um socket
                 new_socket, add = user.accept()
@@ -38,15 +37,16 @@ def server():
             online.remove(sock)
 
 def svinput():
-    while 1:
-        time.sleep(10)
-        print("Olaaaa")
+    while True:
+        ola=sys.stdin.readline()
+        lobby.svinput(ola,online)
 
-
-var = threading.Thread(target=(server()))
-var.daemon=Start
-var.start()
-
-var2 = threading.Thread(target=svinput())#, #args=(sys.stdin.readline()))
-var2.daemon=Start
+var2 = threading.Thread(target=svinput)#, #args=(sys.stdin.readline()))
+var2.daemon=True
 var2.start()
+
+var = threading.Thread(target=server)
+var.daemon=True
+var.start()
+while 1:
+    s=0

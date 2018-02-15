@@ -12,7 +12,7 @@ CURSOR_UP_ONE = '\x1b[1A'
 ERASE_LINE = '\x1b[2K'
 
 def prompt(): #Input do User
-    print('>>', end=' ', flush = True) # FLush é boa pratica
+    print('', end='', flush = True) # FLush é boa pratica
 
 print("Conectado\nBem Vindo!")
 msg_prefix = '' #Para o sv nao confundir com o prompt inicial de nome
