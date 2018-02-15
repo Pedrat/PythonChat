@@ -120,6 +120,8 @@ class LOBBY: #Class para o lobby
         elif "/online" in svmsg:
             for x in online:
                 print(x)
+        elif "/update" in svmsg:
+            self.swearupdate()
         elif "/kick" in svmsg:
             self.kick(svmsg[6:])
 
@@ -166,8 +168,7 @@ class LOBBY: #Class para o lobby
 
         elif "/save" in msg:
             self.save_log()
-        elif "/update" in msg:
-            self.swearupdate()
+
         elif "/online" in msg:
             for x in listanomes:
                 #socket.sendall(x)

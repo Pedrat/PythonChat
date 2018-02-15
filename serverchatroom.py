@@ -9,6 +9,7 @@ listen_sock = headerchatroom.criasocket((host,headerchatroom.PORT)) #Cria a sock
 lobby = LOBBY()
 online=[]
 online.append(listen_sock)  #Quem esta conectado
+os.system("clear")
 
 def server():
     while True:
