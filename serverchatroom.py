@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import select,socket,sys, threading
-=======
 import select,socket,sys
->>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
 from headerchatroom import LOBBY, SALAS, USER
 import headerchatroom
 
@@ -14,7 +11,6 @@ lobby = LOBBY()
 online=[]
 online.append(listen_sock)  #Quem esta conectado
 
-<<<<<<< HEAD
 def server():
     while 1:
         #USER.fileno()
@@ -42,7 +38,6 @@ def server():
             sock.close()
             online.remove(sock)
 
-
 var = threading.Thread(target=(server()))
 var.daemon=Start
 var.start()
@@ -50,7 +45,6 @@ var.start()
 var2 = threading.Thread(target=headerchatroom.svinput, args=(sys.stdin.readline()))
 var2.daemon=Start
 var2.start()
-=======
 while 1:
     #USER.fileno()
     read_users, write_users,error_sockets = select.select(online, [], [])
@@ -74,4 +68,3 @@ while 1:
     for sock in error_sockets: # Fecha error sockets
         sock.close()
         online.remove(sock)
->>>>>>> ffc7259195ee2f79743764b1164ddccfb4c6b5c2
