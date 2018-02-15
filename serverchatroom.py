@@ -1,4 +1,4 @@
-import select,socket,sys, threading
+import select,socket,sys, threading,time
 from headerchatroom import LOBBY, SALAS, USER
 import headerchatroom
 
@@ -37,11 +37,16 @@ def server():
             sock.close()
             online.remove(sock)
 
+def svinput():
+    while 1:
+        time.sleep(10)
+        print("Olaaaa")
+
 
 var = threading.Thread(target=(server()))
 var.daemon=Start
 var.start()
 
-var2 = threading.Thread(target=headerchatroom.svinput, args=(sys.stdin.readline()))
+var2 = threading.Thread(target=svinput())#, #args=(sys.stdin.readline()))
 var2.daemon=Start
 var2.start()
