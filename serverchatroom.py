@@ -1,7 +1,7 @@
 import select,socket,sys, threading
 from headerchatroom import LOBBY, SALAS, USER
 import headerchatroom
-#teste #teste #teste
+
 BUFFER=8192
 
 host = sys.argv[1] #Recebe Host
