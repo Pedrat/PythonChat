@@ -15,7 +15,6 @@ def prompt(): #Input do User
     print('>>', end=' ', flush = True) # FLush é boa pratica
     #print('\r',flush= True)
 
-
 print("Conectado\nBem Vindo!")
 msg_prefix = '' #Para o sv nao confundir com o prompt inicial de nome
 socket_list = [sys.stdin, clientsocket] #Lista de sockets

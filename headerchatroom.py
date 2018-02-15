@@ -1,5 +1,4 @@
 import socket, datetime, os,sys
-import socket, datetime, os
 
 PORT = 4040 #Porta que ira ser usada sempre
 messages=[] #Usado para logs de system
@@ -10,6 +9,7 @@ svmsg=""
 
 for x in open("listaAsneira.txt",'r'):
     listaasneira.append(x)
+
 
 def criasocket(address): #Função para criar a socket de sv
     sv = socket.socket(socket.AF_INET,socket.SOCK_STREAM) #Cria a socket em IPv4 e TCP/IP
@@ -26,7 +26,6 @@ class SALAS: #Class para todas as salas.
         self.name = name #Nomes de salas
     def ENTRADA(self, utilizador): #Função para mandar uma msg de Saudações
         msg = b"Bem vindo,"+utilizador.name.encode()+b"  a sala:\n"+self.name.encode() #Saudações da room
-        msg = b"Bem vindo,  a sala:\n" #Saudações da room
         self.BROADCAST(utilizador,msg)
     def remove_user(self,utilizador): #Função para um utilizador sair da salas
         self.user.remove(utilizador) #Remove o user da sala
@@ -38,8 +37,6 @@ class SALAS: #Class para todas as salas.
                 if x in y:
                     msg=msg.replace(x.encode(),(b"*"*len(x)))
         msg = ((("[{} ".format(datetime.datetime.now().strftime("%H:%M:%S")).encode()))+utilizador.name.encode() + b']: ' + msg) #Formato standard de msg
-        msg = ((("[{} ".format(datetime.datetime.now().strftime("%H:%M:%S")).encode()))+utilizador.name.encode() + b']: ' + msg)
-        #Formato standard de msg
         messages.append(msg.decode()) #Faz append para system logs
         for users in self.user: #Faz o broadcast em si.
             users.socket.sendall(msg)
@@ -114,6 +111,7 @@ class LOBBY: #Class para o lobby
         elif "/update" in svmsg:
             self.swearupdate()
 
+
     def msghandler(self,user,msg):
         print(("[{} ".format(datetime.datetime.now().strftime("%H:%M:%S")))+user.name + "] says: " + msg) #O que o user diz no sv
         comandos=b'Comandos:\n/list Para listar as salas disponiveis\n/join room_name para criar,juntar-se, ou mudar de sala\n/help Para mostrar comandos\n/exit Para desconectar-se\n/save Para salvar os logs\n'
@@ -148,26 +146,15 @@ class LOBBY: #Class para o lobby
             self.listasalas(user)
 
         elif "/help" in msg or "/help" in svmsg  :
-
-        elif "/list" in msg:
-            self.listasalas(user)
-
-        elif "/help" in msg:
-
             user.socket.sendall(comandos)
         elif "/exit" in msg:
             user.socket.sendall(b'/exit')
             self.remove_user(user)
 
-
         elif "/save" in msg or "/save" in svmsg:
             self.save_log()
         elif "/update" in msg or "/update" in svmsg:
             self.swearupdate()
-
-
-        elif "/save" in msg:
-            self.save_log()
 
         else:
             # Faz check se o user esta em uma sala
