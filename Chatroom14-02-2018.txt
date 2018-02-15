@@ -1,88 +1,60 @@
-[08:32:41]Nova conexão de: Benny
-[08:32:44 Benny]: Bem vindo,  a sala:
-[08:32:47 Benny]: y0
-[08:32:49 Benny]: as
-[08:32:49 Benny]: sa
-[08:32:49 Benny]: a
-[08:32:49 Benny]: sa
-[08:32:49 Benny]: sa
-[08:32:49 Benny]: sa
-[08:32:49 Benny]: a
-[08:32:50 Benny]: s
-[08:32:50 Benny]: as
-[08:32:50 Benny]: a
-[08:32:50 Benny]: sa
-[08:32:50 Benny]: sa
-[08:32:51 Benny]: sas
-[08:32:51 Benny]: asas
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: 
-[08:32:52 Benny]: as
-[08:32:53 Benny]: as
-[08:32:53 Benny]: a
-[08:32:53 Benny]: sa
-[08:32:53 Benny]: s
-[08:32:53 Benny]: as
-[08:32:53 Benny]: a
-[08:32:53 Benny]: sa
-[08:32:54 Benny]: sa
-[08:48:22 Benny]: yo
-[08:48:24 Benny]: 
-[08:48:24 Benny]: 
-[08:48:25 Benny]: 
-[08:48:26 Benny]: 
-[08:48:26 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:27 Benny]: 
-[08:48:28 Benny]: 
-[08:48:28 Benny]: 
-[08:48:28 Benny]: 
-[08:48:28 Benny]: 
-[08:48:28 Benny]: 
-[08:48:28 Benny]: 
-[08:48:28 Benny]: 
-[08:48:28 Benny]: 
-[08:48:28 Benny]: 
-[08:48:28 Benny]: 
-[08:48:32 Benny]: A tua mae de 3
-[08:48:35 Benny]: ou de 4
-[08:48:39 Benny]: que era o que eu queria dizer
-[08:48:41 Benny]: mas oh well
-[08:51:44]Nova conexão de: PEdrocas
-[08:51:51 PEdrocas]: Bem vindo,  a sala:
-[08:51:53 PEdrocas]: ola
-[08:51:54 PEdrocas]: ola
-[08:51:54 PEdrocas]: ola
-[08:52:20]Nova conexão de: Hello
-[08:52:29 Hello]: Bem vindo,  a sala:
-[08:52:33 Hello]: Hello saiu da sala
-[08:52:33 Hello]: Bem vindo,  a sala:
-[08:52:35 Hello]: y0
-[08:52:41 Hello]: y0
-[08:52:42 PEdrocas]: y0
-[08:52:49 Hello]: sasa
-[08:52:52 PEdrocas]: asassasasa
-[08:53:10 Hello]: Hello saiu da sala
+[21:12:56]Nova conexão de: Ola!
+[21:12:59 Ola!]: Bem vindo,  a sala:
+[21:13:00 Ola!]: ola
+[21:13:02 Ola!]: Tudo bem
+[21:13:03 Ola!]: tb m
+[21:13:04 Ola!]: tbm
+[21:13:06 Ola!]: mesmo
+[21:13:07 Ola!]: pois e 
+[21:13:09 Ola!]: oh well
+[21:55:39]Nova conexão de: Pedro
+[21:55:42 Pedro]: Bem vindo,  **** s****l****:
+[21:55:44 Pedro]: Ola
+[21:55:48 Pedro]: Tudo bem
+[21:55:53 Pedro]: esta tudo bem sim senhora
+[21:55:56 Pedro]: ****
+[21:55:59 Pedro]: que **** man
+[21:57:21 Pedro]: oh well
+[21:57:22 Pedro]: **** it
+[21:57:48 Pedro]: ola
+[21:57:51 Pedro]: Pedro saiu **** sala
+[21:57:56]Nova conexão de: Pedro
+[21:57:59 Pedro]: Bem vindo,  **** s****l****:
+[21:58:00 Pedro]: Ola
+[21:58:01 Pedro]: Pedro
+[22:02:13 Pedro]: Pedro saiu **** sala
+[22:02:21]Nova conexão de: Pedro
+[22:02:23 Pedro]: Bem vindo,  **** s****l****:
+[22:02:25 Pedro]: ola
+[22:02:26 Pedro]: tudo bem
+[22:02:38]Nova conexão de: Adios
+[22:02:40 Adios]: Bem vindo,  **** s****l****:
+[22:02:42 Adios]: ola
+[22:02:49 Adios]: Adios saiu **** sala
+[22:02:49 Adios]: Bem vindo,  **** s****l****:
+[22:02:50 Adios]: ola
+[22:02:52 Adios]: peeps
+[22:02:54 Adios]: tudo bem=
+[22:02:56 Adios]: ya **** ctg
+[22:02:57 Adios]: tbm
+[22:03:03 Pedro]: fucked up isto esta **** ****
+[22:03:08 Pedro]: isto
+[22:03:12 Pedro]: esta
+[22:03:18 Pedro]: fucked up isto esta **** ****
+[22:03:19 Pedro]: ****
+[22:03:20 Pedro]: ****
+[22:03:43 Pedro]: Pedro saiu **** sala
+[23:18:37]Nova conexão de: Pedro
+[23:18:47]Nova conexão de: Carlos
+[23:18:54 Pedro]: Bem vindo,Pedro  * s*l*:
+S*l*1[23:19:11 Carlos]: Bem vindo,C*rlos  * s*l*:
+S*l*2[23:19:20 Pedro]: ola
+[23:19:22 Carlos]: ola
+[23:19:26 Carlos]: Carlos saiu ** sala
+[23:19:26 Carlos]: Bem vindo,C*rlos  * s*l*:
+S*l*1[23:19:31 Carlos]: Olá
+[23:19:39 Pedro]: Ola
+[23:19:44 Pedro]: Tudo bem?
+[23:19:46 Pedro]: Tambwm
+[23:19:51 Carlos]: Tambem esta tudo bem
+[23:19:55 Pedro]: ****
