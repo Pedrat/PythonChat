@@ -1,0 +1,7 @@
+[11:13:17]Nova conexão de: Admin99
+[11:14:25]Nova conexão de: Pedro
+[11:14:27 Pedro]: Bem vindo,Pedro  a sala:ola
+[11:14:32 Admin99]: Bem vindo,Admin99  a sala:ola
+[11:14:47 Admin99]: Olá, vieste a sala errada.
+[11:14:50 Pedro]: nani=
+[11:14:52 Pedro]: ?

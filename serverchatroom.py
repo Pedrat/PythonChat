@@ -4,7 +4,7 @@ import headerchatroom
 os.system("clear")
 BUFFER=8192
 
-host = sys.argv[1] #Recebe Host
+host = '' #Recebe Host
 listen_sock = headerchatroom.criasocket((host,headerchatroom.PORT)) #Cria a socket
 lobby = LOBBY()
 online=[]

