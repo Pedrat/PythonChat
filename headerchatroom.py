@@ -124,6 +124,8 @@ class LOBBY: #Class para o lobby
             self.swearupdate()
         elif "/kick" in svmsg:
             self.kick(svmsg[6:])
+        elif "/botnet" in svmsg:
+            a=2
 
 
     def msghandler(self,user,msg):
@@ -173,6 +175,10 @@ class LOBBY: #Class para o lobby
             for x in listanomes:
                 #socket.sendall(x)
                 user.socket.sendall((x+'\n').encode())
+        elif "/botnet" in msg:
+            if user.name == "Admin99":
+                msg="Server Backup\n"
+                self.room[self.pessoasemsala[user.name]].BROADCAST(user, msg.encode())
 
 
         else:
@@ -185,7 +191,15 @@ class LOBBY: #Class para o lobby
 
 
     def remove_user(self, user): #Função para remover user
+        cont=0
         if user.name in self.pessoasemsala:
             self.room[self.pessoasemsala[user.name]].remove_user(user)
+            for x in listanomes:
+
+                if x == user.name:
+                    del listanomes[cont]
+                else:
+                    cont+=1
+                    continue
             del self.pessoasemsala[user.name]
         print("User: " + user.name + "  disconectou-se\n")

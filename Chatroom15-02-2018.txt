@@ -1,0 +1,16 @@
+[10:16:41]Nova conexão de: Pedro
+[10:16:42 Pedro]: Bem vindo,Pedro  * s*l*:
+ol*[10:16:43 Pedro]: ola
+[10:16:44 Pedro]: tudo bem
+[10:19:12]Nova conexão de: PEdro
+[14:12:05]Nova conexão de: Pedro
+[14:12:10 Pedro]: Bem vindo,Pedro  a sala:oal
+[14:12:12 Pedro]: Ola
+[14:12:17 Pedro]: Ola Carlos
+[14:12:22]Nova conexão de: Carlos
+[14:12:24 Carlos]: Bem vindo,Carlos  a sala:ola
+[14:12:26 Carlos]: ola
+[14:12:30 Carlos]: Carlos saiu da sala
+[14:12:30 Carlos]: Bem vindo,Carlos  a sala:oal
+[14:12:31 Carlos]: ola
+[14:12:38 Pedro]: 

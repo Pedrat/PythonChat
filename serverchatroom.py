@@ -1,7 +1,7 @@
 import select,socket,sys, threading,time,os
 from headerchatroom import LOBBY, SALAS, USER
 import headerchatroom
-
+os.system("clear")
 BUFFER=8192
 
 host = sys.argv[1] #Recebe Host
@@ -9,7 +9,7 @@ listen_sock = headerchatroom.criasocket((host,headerchatroom.PORT)) #Cria a sock
 lobby = LOBBY()
 online=[]
 online.append(listen_sock)  #Quem esta conectado
-os.system("clear")
+
 
 def server():
     while True:
